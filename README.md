@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>friendscot Official Site</title>
+    <title>Friends Official Site</title>
     <style>
-        /* পুরো পেজের ডিজাইন */
+        /* পুরো পেজের জন্য মেইন ডিজাইন */
         body {
             margin: 0;
             padding: 0;
@@ -14,12 +14,12 @@
             align-items: center;
             justify-content: center;
             min-height: 100vh;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', Arial, sans-serif;
             color: white;
-            /* ব্যাকগ্রাউন্ড কালার চেঞ্জিং অ্যানিমেশন */
-            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            /* কালারফুল ব্যাকগ্রাউন্ড অ্যানিমেশন */
+            background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #a1c4fd, #c2e9fb);
             background-size: 400% 400%;
-            animation: gradientBG 12s ease infinite;
+            animation: gradientBG 15s ease infinite;
             overflow-x: hidden;
         }
 
@@ -29,58 +29,62 @@
             100% { background-position: 0% 50%; }
         }
 
-        /* নতুন নাম: friendscot */
+        /* আপনার নতুন নাম: Friends */
         h1 {
-            font-size: 2.8rem;
-            margin-bottom: 25px;
-            text-shadow: 3px 5px 15px rgba(0,0,0,0.4);
-            letter-spacing: 2px;
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 4px 10px rgba(0,0,0,0.2);
+            letter-spacing: 3px;
+            text-transform: uppercase;
         }
 
-        /* ইমেজের ডিজাইন ও অ্যানিমেশন */
-        .image-container {
-            width: 280px;
-            max-width: 85%;
+        /* ইমেজ কন্টেইনার এবং ভাসমান অ্যানিমেশন */
+        .image-box {
+            width: 250px;
+            max-width: 80%;
+            margin-bottom: 30px;
         }
 
         img {
             width: 100%;
             height: auto;
-            border-radius: 25px; /* হালকা রাউন্ডেড শেপ */
-            border: 6px solid rgba(255, 255, 255, 0.3);
-            box-shadow: 0 15px 45px rgba(0,0,0,0.6);
-            animation: floatImage 4s ease-in-out infinite;
+            border-radius: 30px; /* সুন্দর রাউন্ডেড কোণা */
+            border: 8px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            animation: floating 4s ease-in-out infinite;
         }
 
-        @keyframes floatImage {
+        @keyframes floating {
             0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-25px); }
+            50% { transform: translateY(-20px); }
         }
 
-        /* অডিও প্লেয়ার */
+        /* অডিও প্লেয়ার ডিজাইন */
         audio {
-            margin-top: 40px;
-            filter: drop-shadow(0 8px 20px rgba(0,0,0,0.4));
-            opacity: 0.9;
+            width: 300px;
+            max-width: 90%;
+            filter: drop-shadow(0 10px 15px rgba(0,0,0,0.2));
+            border-radius: 50px;
         }
 
-        /* নিচের টেক্সট */
-        .welcome-text {
-            margin-top: 25px;
-            font-size: 1.1rem;
-            font-weight: 300;
-            background: rgba(0, 0, 0, 0.2);
-            padding: 8px 20px;
-            border-radius: 50px;
+        /* নিচের ছোট টেক্সট */
+        .footer-text {
+            margin-top: 30px;
+            font-size: 1.2rem;
+            font-weight: 500;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px 25px;
+            border-radius: 30px;
+            backdrop-filter: blur(5px);
         }
     </style>
 </head>
 <body>
 
-    <h1>friendscot.github.io</h1>
+    <h1>Friends</h1>
 
-    <div class="image-container">
-        <img src="hk.png" alt="friendscot Profile">
+    <div class="image-box">
+        <img src="hk.png" alt="Friends Profile">
     </div>
 
     <audio controls>
@@ -88,7 +92,7 @@
         আপনার ব্রাউজারটি অডিও সাপোর্ট করে না।
     </audio>
 
-    <div class="welcome-text">Welcome to friendscot animated world!</div>
+    <div class="footer-text">Welcome to the world of Friends!</div>
 
 </body>
 </html>
