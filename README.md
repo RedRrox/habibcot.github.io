@@ -42,7 +42,6 @@
             background: var(--bg-gradient);
             background-size: 400% 400%;
             animation: gradientBG 15s ease infinite;
-            overflow-x: hidden;
         }
 
         @keyframes gradientBG {
@@ -51,7 +50,6 @@
             100% { background-position: 0% 50%; }
         }
 
-        /* ডার্ক মোড সুইচ */
         .theme-switch {
             position: fixed;
             top: 20px;
@@ -63,7 +61,6 @@
             border: 1px solid rgba(255,255,255,0.3);
             font-size: 1.5rem;
             z-index: 100;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
         .description-container {
@@ -76,7 +73,6 @@
             text-align: center;
             margin-top: 60px;
             margin-bottom: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
 
         .description-container p {
@@ -86,17 +82,9 @@
             font-weight: 500;
         }
 
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
+        h1 { font-size: 2.5rem; margin-bottom: 20px; text-transform: uppercase; }
 
-        .photo-frame {
-            width: 280px;
-            margin-bottom: 30px;
-        }
+        .photo-frame { width: 280px; margin-bottom: 30px; }
 
         img.profile-img {
             width: 100%;
@@ -127,28 +115,22 @@
             box-shadow: 0 8px 20px rgba(0,0,0,0.15);
         }
 
-        .play-music-btn:hover {
-            transform: scale(1.05);
-        }
-
-        /* ভিজিটর কাউন্টার স্টাইল */
+        /* নতুন কাউন্টার স্টাইল */
         .visitor-counter {
-            margin-top: 50px;
-            padding: 15px 25px;
+            margin-top: 40px;
+            padding: 10px 20px;
             background: var(--box-bg);
-            border-radius: 30px;
-            font-size: 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
             color: var(--text-color);
-            border: 1px solid rgba(255,255,255,0.2);
             display: flex;
+            flex-direction: column;
             align-items: center;
-            gap: 10px;
+            gap: 5px;
         }
 
-        #count {
-            font-weight: bold;
-            color: var(--accent);
-            font-size: 1.2rem;
+        .visitor-counter img {
+            filter: hue-rotate(300deg); /* কাউন্টার কালার চেঞ্জ করার জন্য */
         }
     </style>
 </head>
@@ -178,12 +160,11 @@
     </button>
 
     <div class="visitor-counter">
-        <span>👀 Total Visitors:</span>
-        <span id="count">Loading...</span>
+        <span>👀 Total Visitors</span>
+        <img src="https://counter.secrethelp.workers.dev/redrrox/friend-site" alt="Visitor Counter">
     </div>
 
     <script>
-        // ডার্ক মোড ফাংশন
         function toggleTheme() {
             const body = document.body;
             const icon = document.getElementById("themeIcon");
@@ -196,12 +177,10 @@
             }
         }
 
-        // মিউজিক ফাংশন
         function playPause() {
             const audio = document.getElementById("bgMusic");
             const txt = document.getElementById("btnText");
             const icon = document.getElementById("btnIcon");
-            
             if (audio.paused) {
                 audio.play();
                 txt.innerText = "Pause Music";
@@ -212,22 +191,6 @@
                 icon.innerText = "▶";
             }
         }
-
-        // ভিজিটর কাউন্টার লজিক
-        function updateCounter() {
-            // এটি একটি ফ্রি API যা আপনার সাইটের ভিজিটর গুনবে
-            fetch('https://api.countapi.xyz/hit/redrrox-friend-site/visits')
-            .then(res => res.json())
-            .then(res => {
-                document.getElementById('count').innerHTML = res.value;
-            })
-            .catch(err => {
-                // যদি API কাজ না করে তবে একটি র‍্যান্ডম সুন্দর সংখ্যা দেখাবে
-                document.getElementById('count').innerHTML = "124"; 
-            });
-        }
-
-        updateCounter();
     </script>
 
 </body>
