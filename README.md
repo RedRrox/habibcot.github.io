@@ -7,19 +7,19 @@
     <style>
         * {
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
             -webkit-tap-highlight-color: transparent;
         }
 
         body {
-            margin: 0;
-            padding: 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
             min-height: 100vh;
+            padding: 20px;
             font-family: 'Segoe UI', Tahoma, sans-serif;
             color: white;
-            /* ব্যাকগ্রাউন্ড অ্যানিমেশন */
             background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #a1c4fd, #c2e9fb);
             background-size: 400% 400%;
             animation: gradientBG 10s ease infinite;
@@ -31,57 +31,55 @@
             100% { background-position: 0% 50%; }
         }
 
-        /* --- টপ ডিসক্রিপশন বক্স --- */
-        .description-box {
-            max-width: 500px;
-            background: rgba(255, 255, 255, 0.2);
+        /* ডিসক্রিপশন বক্স */
+        .desc-box {
+            max-width: 450px;
+            background: rgba(255, 255, 255, 0.25);
             backdrop-filter: blur(10px);
             padding: 20px;
             border-radius: 20px;
             border: 1px solid rgba(255, 255, 255, 0.3);
             text-align: center;
-            margin-bottom: 30px;
+            margin: 20px 0;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
         }
 
-        .description-box p {
+        .desc-box p {
             font-size: 0.95rem;
             line-height: 1.6;
-            margin: 0;
-            color: #333; /* পড়ার সুবিধার জন্য গাঢ় রঙ */
+            color: #333;
             font-weight: 500;
         }
 
-        /* --- মেইন কন্টেন্ট --- */
         h1 {
             font-size: 2.5rem;
-            margin: 10px 0 20px 0;
+            margin-bottom: 20px;
             text-transform: uppercase;
-            text-shadow: 2px 4px 10px rgba(0,0,0,0.1);
         }
 
+        /* ইমেজের ডিজাইন */
         .image-box {
-            width: 180px;
-            height: 180px;
-            margin-bottom: 25px;
+            width: 250px; /* ইমেজের সাইজ */
+            height: 250px;
+            margin-bottom: 30px;
         }
 
         img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: 50%;
-            border: 5px solid white;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border-radius: 20px; /* ছবি এবার চারকোণা থাকবে কিন্তু কোণাগুলো হালকা গোল হবে */
+            border: 6px solid white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
             animation: floating 3s ease-in-out infinite;
         }
 
         @keyframes floating {
             0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-12px); }
+            50% { transform: translateY(-15px); }
         }
 
-        /* ফ্যান্সি মিউজিক বাটন */
+        /* বাটন */
         #play-btn {
             background: white;
             color: #ff758c;
@@ -95,18 +93,12 @@
             align-items: center;
             gap: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: 0.3s;
         }
-
-        #play-btn:active {
-            transform: scale(0.95);
-        }
-
     </style>
 </head>
 <body>
 
-    <div class="description-box">
+    <div class="desc-box">
         <p>
             ধন্যবাদ আমাদের ওয়েবসাইটে আসার জন্য! <br>
             আমাদের ওয়েবসাইটটি কারো অপমান বা ছোট করার জন্য তৈরি করা হয়নি। এটি সম্পূর্ণভাবে মজা এবং বিনোদনের উদ্দেশ্যে তৈরি। তাই কেউ এই ওয়েবসাইটকে খারাপভাবে বা নেতিবাচকভাবে দেখবেন না। আমাদের উদ্দেশ্য শুধু হাসি, আনন্দ এবং ভালো সময় উপভোগ করা। ধন্যবাদ!
