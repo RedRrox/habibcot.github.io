@@ -59,8 +59,8 @@
             border: 6px solid white;
             box-shadow: 0 15px 35px rgba(0,0,0,0.2);
             margin-bottom: 15px;
-            background: rgba(255,255,255,0.1); /* লোড হওয়ার আগে হালকা বক্স দেখাবে */
             min-height: 200px;
+            background: #eee;
         }
 
         .play-btn {
@@ -89,13 +89,13 @@
     <h1>Friends</h1>
 
     <div class="photo-section">
-        <img src="hk.png" alt="First Photo">
+        <img src="hk.png" alt="Memory 1">
         <audio id="a1" loop><source src="meow-ghop-ghop-ghop.mp3" type="audio/mpeg"></audio>
         <button class="play-btn" onclick="playMusic('a1', this)">▶ Play Music 1</button>
     </div>
 
     <div class="photo-section">
-        <img src="https://raw.githubusercontent.com/RedRrox/friend/main/nk.jpg" alt="Second Photo">
+        <img src="nk.jpg" onerror="this.src='https://raw.githubusercontent.com/RedRrox/friend/main/nk.jpg'" alt="Memory 2">
         <audio id="a2" loop><source src="cid.mp3" type="audio/mpeg"></audio>
         <button class="play-btn" onclick="playMusic('a2', this)">▶ Play Music 2</button>
     </div>
@@ -116,7 +116,7 @@
         function playMusic(id, btn) {
             const audio = document.getElementById(id);
             
-            // একটি বাজালে অন্যটি বন্ধ হবে
+            // সব অডিও বন্ধ করা
             document.querySelectorAll('audio').forEach(m => {
                 if(m.id !== id) {
                     m.pause();
