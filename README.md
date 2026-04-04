@@ -4,56 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Friends Collection</title>
-    
     <link rel="icon" type="image/jpeg" href="rrp.jpg">
-
     <style>
         :root {
             --bg: linear-gradient(-45deg, #ff9a9e, #fad0c4, #a1c4fd, #c2e9fb);
             --text: #222;
             --glass: rgba(255, 255, 255, 0.3);
         }
-
         [data-theme="dark"] {
             --bg: linear-gradient(-45deg, #1a1a2e, #16213e, #0f3460);
             --text: #eee;
             --glass: rgba(0, 0, 0, 0.5);
         }
-
         * { margin: 0; padding: 0; box-sizing: border-box; transition: 0.4s; }
-
         body {
             min-height: 100vh;
             background: var(--bg);
             background-size: 400% 400%;
             animation: gradient 15s infinite;
-            font-family: 'Segoe UI', sans-serif;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
             color: var(--text);
             display: flex;
             flex-direction: column;
             align-items: center;
             padding: 20px;
         }
-
-        @keyframes gradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        .theme-btn {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            cursor: pointer;
-            background: var(--glass);
-            padding: 12px;
-            border-radius: 50%;
-            font-size: 1.5rem;
-            border: 1px solid rgba(255,255,255,0.3);
-            z-index: 1000;
-        }
-
+        @keyframes gradient { 0% {background-position: 0% 50%;} 50% {background-position: 100% 50%;} 100% {background-position: 0% 50%;} }
+        
+        .theme-btn { position: fixed; top: 20px; right: 20px; cursor: pointer; background: var(--glass); padding: 12px; border-radius: 50%; font-size: 1.5rem; border: 1px solid rgba(255,255,255,0.3); z-index: 1000; }
+        
         .description-box {
             max-width: 550px;
             width: 95%;
@@ -65,49 +44,19 @@
             text-align: center;
             margin-top: 60px;
             margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
 
         .description-box p {
-            font-size: 15px;
-            line-height: 1.6;
+            font-size: 16px;
+            line-height: 1.7;
             font-weight: 500;
         }
 
-        h1 {
-            font-size: 2.2rem;
-            margin-bottom: 25px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: white;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.1);
-        }
-
-        .card {
-            width: 320px;
-            max-width: 90%;
-            margin-bottom: 50px;
-            text-align: center;
-        }
-
-        img {
-            width: 100%;
-            border-radius: 15px;
-            border: 5px solid white;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-            margin-bottom: 15px;
-        }
-
-        .play-btn {
-            background: white;
-            color: #ff758c;
-            border: none;
-            padding: 14px;
-            font-weight: bold;
-            border-radius: 50px;
-            cursor: pointer;
-            width: 100%;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
+        h1 { font-size: 2.2rem; margin-bottom: 25px; text-transform: uppercase; color: white; text-shadow: 2px 2px 8px rgba(0,0,0,0.1); }
+        .card { width: 320px; max-width: 90%; margin-bottom: 50px; text-align: center; }
+        img { width: 100%; border-radius: 15px; border: 5px solid white; box-shadow: 0 10px 25px rgba(0,0,0,0.15); margin-bottom: 15px; }
+        .play-btn { background: white; color: #ff758c; border: none; padding: 14px; font-weight: bold; border-radius: 50px; cursor: pointer; width: 100%; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
     </style>
 </head>
 <body>
@@ -115,7 +64,10 @@
     <div class="theme-btn" onclick="toggleTheme()" id="themeIcon">🌙</div>
 
     <div class="description-box">
-        <p>ধন্যবাদ আমাদের ওয়েবসাইটে আসার জন্য! আমাদের ওয়েবসাইটটি কারো অপমান বা ছোট করার জন্য তৈরি করা হয়নি। এটি সম্পূর্ণভাবে মজা এবং বিনোদনের উদ্দেশ্যে তৈরি। কেউ এই ওয়েবসাইটকে নেতিবাচকভাবে দেখবেন না।</p>
+        <p>
+            ধন্যবাদ আমাদের ওয়েবসাইটে আসার জন্য! <br>
+            আমাদের ওয়েবসাইটটি কারো অপমান বা ছোট করার জন্য তৈরি করা হয়নি। এটি সম্পূর্ণভাবে মজা এবং বিনোদনের উদ্দেশ্যে তৈরি। তাই কেউ এই ওয়েবসাইটকে খারাপভাবে বা নেতিবাচকভাবে দেখবেন না। আমাদের উদ্দেশ্য শুধু হাসি, আনন্দ এবং ভালো সময় উপভোগ করা। ধন্যবাদ!
+        </p>
     </div>
 
     <h1>Friends</h1>
@@ -147,14 +99,12 @@
 
         function playMusic(id, btn) {
             const audio = document.getElementById(id);
-            // এক সাথে যেন দুটি গান না বাজে
             document.querySelectorAll('audio').forEach(m => {
                 if(m.id !== id) {
                     m.pause();
                     m.nextElementSibling.innerText = m.id === "audio1" ? "▶ Play Music 1" : "▶ Play Music 2";
                 }
             });
-
             if (audio.paused) {
                 audio.play();
                 btn.innerText = "⏸ Pause Music";
