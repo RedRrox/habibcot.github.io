@@ -50,7 +50,6 @@
 
         h1 { font-size: 2.2rem; margin-bottom: 40px; text-transform: uppercase; color: white; text-shadow: 2px 2px 8px rgba(0,0,0,0.1); }
 
-        /* সব কন্টেন্ট এক লাইনে রাখার জন্য */
         .content-stack {
             width: 320px;
             max-width: 95%;
@@ -62,7 +61,7 @@
 
         .memory-item { width: 100%; text-align: center; }
 
-        img {
+        img, video {
             width: 100%;
             border-radius: 15px;
             border: 5px solid white;
@@ -82,6 +81,8 @@
             width: 100%;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
+
+        h3 { font-size: 1rem; margin-bottom: 10px; opacity: 0.8; }
     </style>
 </head>
 <body>
@@ -123,6 +124,14 @@
             <button class="play-btn" onclick="playMusic('audio4', this)">▶ Play Music 4</button>
         </div>
 
+        <div class="memory-item">
+            <h3>Irfan Video Memory</h3>
+            <video controls>
+                <source src="irfan.mp4" type="video/mp4">
+                আপনার ব্রাউজার ভিডিও সাপোর্ট করে না।
+            </video>
+        </div>
+
     </div>
 
     <script>
@@ -138,6 +147,10 @@
 
         function playMusic(id, btn) {
             const audio = document.getElementById(id);
+            
+            // অডিও চালু করার সময় ভিডিও পজ করার জন্য
+            document.querySelectorAll('video').forEach(v => v.pause());
+
             document.querySelectorAll('audio').forEach(m => {
                 if(m.id !== id) {
                     m.pause();
